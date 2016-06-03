@@ -11,7 +11,12 @@ for (var i = 0; i < 81; i++) {
   square.style.width="100px"
   square.style.height="100px"
   square.style.display="inline-block"
-  i%2===0 ? square.style.backgroundColor = "red" : square.style.backgroundColor = "black"
+  if(i%9===0){
+    var rgbVal = 'rgb('+ (255 * (i/100)).toFixed(0) + ', 0, 0)'
+    console.log(rgbVal);
+  }
+  i%2===0 ? square.style.background = rgbVal : square.style.background = "black"
+  // square.style.background=''
   square.style.padding = 0
   square.style.marginBottom = "-5px"
   document.getElementById('container').appendChild(square)
